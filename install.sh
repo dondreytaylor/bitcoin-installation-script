@@ -48,6 +48,7 @@ sudo ln -s /usr/local/lib/libsodium.so.23 /usr/lib/libsodium.so.23
 sudo apt-get install unzip -y
 
 # Get Bitcoin Repo
+cd /home/$USER/
 wget https://github.com/BTCGPU/BTCGPU/archive/v0.15.1.zip
 unzip v0.15.1.zip
 rm -rf v0.15.1.zip
@@ -55,5 +56,5 @@ rm -rf v0.15.1.zip
 # Compile Bitcoin
 cd BTCGPU-0.15.1
 ./autogen.sh
-./configure --prefix=/home/$USER/BTCGPU-0.15.1/depends/x86_64-pc-linux-gnu/ --disable-shared --with-gui=no
+./configure --prefix=/home/$USER/BTCGPU-0.15.1/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
 make
