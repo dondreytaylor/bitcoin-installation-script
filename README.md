@@ -15,7 +15,7 @@ sudo sed -i -e 's/security.ubuntu/old-releases.ubuntu/g' /etc/apt/sources.list
 Ubuntu 15.10
 
 # Install different Bitcoin Code
-To install a forked version of Bitcoin or any coin based on Bitcoin and which has the same dependencies- update the following code to reflect the location of the zipped code.
+To install a forked version of Bitcoin or any coin based on Bitcoin with the same dependencies- update the following code to reflect the location of the zipped code.
 
 ```
 # Get Bitcoin Repo
