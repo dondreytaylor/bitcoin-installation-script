@@ -29,8 +29,6 @@ sudo apt-get install automake pkg-config bsdmainutils python3 -y
 # Libx11
 sudo apt-get install libx11-xcb-dev libfontconfig-dev -y
 
-# Install Berkeleydb 4.8
-/bin/sh /home/$USER/bitcoin-installation-script/berkeleydb-installation.sh
 
 # Install Libsodium
 wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
@@ -53,8 +51,14 @@ wget https://github.com/BTCGPU/BTCGPU/archive/v0.15.1.zip
 unzip v0.15.1.zip
 rm -rf v0.15.1.zip
 
-# Compile Bitcoin
+# Go into Bitcoin Directory
 cd BTCGPU-0.15.1
+
+# Install Berkeleydb 4.8
+/bin/sh /home/$USER/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
+
+# # Build
 ./autogen.sh
+export BDB_PREFIX=/home/$USER/BTCGPU-0.15.1/db4
 ./configure --prefix=/home/$USER/BTCGPU-0.15.1/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
 make
