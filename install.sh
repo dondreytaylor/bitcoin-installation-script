@@ -29,8 +29,8 @@ sudo apt-get install automake pkg-config bsdmainutils python3 -y
 # Libx11
 sudo apt-get install libx11-xcb-dev libfontconfig-dev -y
 
-# Install BerkelyDB 4.8
-/bin/sh /home/$USER/bitcoin-installation-script/berkelydb-installation.sh
+# Install Berkeleydb 4.8
+/bin/sh /home/$USER/bitcoin-installation-script/berkeleydb-installation.sh
 
 # Install Libsodium
 wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
