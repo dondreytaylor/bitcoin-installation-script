@@ -1,5 +1,10 @@
 # Bitcoin Installation Script
 
+# Update source endpoints (Only for older version of Ubuntu e.g. 15.10)
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+sudo sed -i -e 's/us.archive/old-releases/g' /etc/apt/sources.list
+sudo sed -i -e 's/security.ubuntu/old-releases.ubuntu/g' /etc/apt/sources.list
+
 # Update system
 sudo apt-get update -y
 
