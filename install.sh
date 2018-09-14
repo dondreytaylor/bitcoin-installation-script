@@ -57,6 +57,6 @@ sudo apt-get install libdb++-dev
 
 # # Build
 ./autogen.sh
-export BDB_PREFIX=/home/$USER/BTCGPU-0.15.1/db4
-./configure --prefix=/home/$USER/BTCGPU-0.15.1/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
+export BDB_PREFIX=/home/$USER/bitcoin-installation-script/BTCGPU-0.15.1/db4
+./configure --prefix=/home/$USER/bitcoin-installation-script/BTCGPU-0.15.1/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-5.3" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
 make
