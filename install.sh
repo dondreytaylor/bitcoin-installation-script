@@ -52,6 +52,9 @@ cd BTCGPU-0.15.1
 # Install Berkeleydb 4.8
 /bin/sh /home/$USER/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
 
+# Install Berkleydb Dependency
+sudo apt-get install libdb++-dev
+
 # # Build
 ./autogen.sh
 export BDB_PREFIX=/home/$USER/BTCGPU-0.15.1/db4
