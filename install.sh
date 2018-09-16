@@ -62,5 +62,5 @@ export BDB_PREFIX=/home/$USER/bitcoin-installation-script/BTCGPU-0.15.1/db4
 make
 
 cd ..
-mv BTCGPU-0.15.1 /home/$USER/
+mv BTCGPU-0.15.1 /home/$USER/BTCGPU-0.15.1
 cd /home/$USER/
