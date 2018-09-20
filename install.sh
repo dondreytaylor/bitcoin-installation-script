@@ -43,11 +43,11 @@ sudo apt-get install unzip -y
 # Get Bitcoin Repo
 cd /home/$USER/
 wget https://github.com/BTHPOS/BTH/archive/v0.17.zip
-unzip v0.15.1.zip
-rm -rf v0.15.1.zip
+unzip v0.17.zip
+rm -rf v0.17.zip
 
 # Go into Bitcoin Directory
-cd BTCGPU-0.15.1
+cd BTH-0.17
 
 # Install Berkeleydb 4.8
 /bin/sh /home/$USER/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
@@ -57,10 +57,10 @@ sudo apt-get install libdb++-dev
 
 # # Build
 ./autogen.sh
-export BDB_PREFIX=/home/$USER/bitcoin-installation-script/BTCGPU-0.15.1/db4
-./configure --prefix=/home/$USER/bitcoin-installation-script/BTCGPU-0.15.1/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-5.3" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
+export BDB_PREFIX=/home/$USER/bitcoin-installation-script/BTH-0.17/db4
+./configure --prefix=/home/$USER/bitcoin-installation-script/BTH-0.17/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-5.3" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
 make
 
 cd ..
-mv BTCGPU-0.15.1 /home/$USER/BTCGPU-0.15.1
+mv BTH-0.17 /home/$USER/BTH-0.17
 cd /home/$USER/
