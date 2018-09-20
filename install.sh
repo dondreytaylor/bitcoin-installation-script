@@ -1,6 +1,6 @@
 # Bitcoin Installation Script
-cd $1
-echo $1;
+cd /$1
+echo /$1;
 
 # Update system
 sudo apt-get update -y
@@ -43,7 +43,7 @@ sudo ln -s /usr/local/lib/libsodium.so.23 /usr/lib/libsodium.so.23
 sudo apt-get install unzip -y
 
 # Get Bitcoin Repo
-cd $1
+cd /$1
 wget https://github.com/BTHPOS/BTH/archive/v0.17.zip
 unzip v0.17.zip
 rm -rf v0.17.zip
@@ -52,15 +52,15 @@ rm -rf v0.17.zip
 cd BTH-0.17
 
 # Install Berkeleydb 4.8
-/bin/sh $1/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
+/bin/sh /$1/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
 
 # Install Berkleydb Dependency
 sudo apt-get install libdb++-dev -y
 
 # # Build
 ./autogen.sh
-export BDB_PREFIX=$1/bitcoin-installation-script/BTH-0.17/db4
-./configure --prefix=$1/bitcoin-installation-script/BTH-0.17/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-5.3" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
+export BDB_PREFIX=/$1/bitcoin-installation-script/BTH-0.17/db4
+./configure --prefix=/$1/bitcoin-installation-script/BTH-0.17/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
 make
 
 cd ..
