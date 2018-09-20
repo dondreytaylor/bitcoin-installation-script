@@ -52,7 +52,7 @@ rm -rf v0.17.zip
 cd BTH-0.17
 
 # Install Berkeleydb 4.8
-/bin/sh /home/$USER/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
+/bin/sh $1/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
 
 # Install Berkleydb Dependency
 sudo apt-get install libdb++-dev -y
