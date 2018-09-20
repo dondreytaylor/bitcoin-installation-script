@@ -44,12 +44,12 @@ sudo apt-get install unzip -y
 
 # Get Bitcoin Repo
 cd /$1
-wget https://github.com/BTHPOS/BTH/archive/v0.17.1.zip
-unzip v0.17.1.zip
-rm -rf v0.17.1.zip
+wget https://github.com/BTHPOS/BTH/archive/v0.17.2.zip
+unzip v0.17.2.zip
+rm -rf v0.17.2.zip
 
 # Go into Bitcoin Directory
-cd BTH-0.17.1
+cd BTH-0.17.2
 
 # Install Berkeleydb 4.8
 /bin/sh /$1/bitcoin-installation-script/berkeleydb-installation.sh `pwd`
@@ -59,10 +59,10 @@ sudo apt-get install libdb++-dev -y
 
 # # Build
 ./autogen.sh
-export BDB_PREFIX=/$1/bitcoin-installation-script/BTH-0.17.1/db4
-./configure --prefix=/$1/bitcoin-installation-script/BTH-0.17.1/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
+export BDB_PREFIX=/$1/bitcoin-installation-script/BTH-0.17.2/db4
+./configure --prefix=/$1/bitcoin-installation-script/BTH-0.17.2/depends/x86_64-pc-linux-gnu/ BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-cxx --disable-shared --with-pic
 make
 
 cd ..
-mv BTH-0.17.1 /$1
+mv BTH-0.17.2 /$1
 cd /$1
