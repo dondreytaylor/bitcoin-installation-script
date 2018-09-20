@@ -42,7 +42,7 @@ sudo apt-get install unzip -y
 
 # Get Bitcoin Repo
 cd /home/$USER/
-wget https://github.com/BTCGPU/BTCGPU/archive/v0.15.1.zip
+wget https://github.com/BTHPOS/BTH/archive/v0.17.zip
 unzip v0.15.1.zip
 rm -rf v0.15.1.zip
 
