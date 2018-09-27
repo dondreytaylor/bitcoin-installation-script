@@ -45,8 +45,8 @@ sudo apt-get install unzip -y
 # Get Bitcoin Repo
 cd /$1
 wget https://github.com/dondreytaylor/bth/archive/v1.zip
-unzip bth-1.zip
-rm -rf bth-1.zip
+unzip v1.zip
+rm -rf v1.zip
 
 # Go into Bitcoin Directory
 cd bth-1
